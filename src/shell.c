@@ -47,6 +47,7 @@ RESULT run_script(char *script, size_t script_len, int *exitcode, int *signal,
     OPT_SETENV_INT(nosymlinkinfo);
     OPT_SETENV_INT(autochafa);
     OPT_SETENV_INT(chafasixel);
+    OPT_SETENV_INT(chafakitty);
     OPT_SETENV_INT(showgpg);
     OPT_SETENV_STR(shell);
 

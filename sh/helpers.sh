@@ -26,11 +26,16 @@ chafasixel() {
 	[ -n "$chafasixel" ]
 }
 
+chafakitty() {
+  [ -n "$chafakitty" ]
+}
+
 is_kitty() {
 	[ -n "$KITTY_PID" ] && return 0
 
 	case "$TERM" in
 		*-kitty) return 0 ;;
+    xterm-256color) return 0 ;;
 		*)       return 1 ;;
 	esac
 }
@@ -74,6 +79,7 @@ chafa_run() {
 	format='-f symbols'
 	autochafa && format=
 	chafasixel && format='-f sixels'
+  chafakitty && format='-f kitty'
 	chafa -s "${w}x${h}" $format "$1" | sed 's/#/\n#/g'
 }
 
